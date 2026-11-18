@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src https://api.datamuse.com https://wikimedia.org https://en.wikipedia.org; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+  <title>tangent</title>
+  <meta name="description" content="One random word. Branch out from there.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23222'/%3E%3Ctext x='16' y='24' font-family='monospace' font-size='24' text-anchor='middle' fill='%23fff'%3E%26lt;%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="sources" aria-label="Where words come from">
+    <button type="button" data-source="all" title="A mix of everything">anything</button>
+    <button type="button" data-source="things" title="Concrete nouns">things</button>
+    <button type="button" data-source="ideas" title="Abstract concepts">ideas</button>
+    <button type="button" data-source="rare" title="Unusual dictionary words">rare</button>
+    <button type="button" data-source="now" title="What people are reading about today">now</button>
+  </nav>
+
+  <main id="stage">
+    <div id="world">
+      <pre class="field f1" aria-hidden="true"></pre>
+      <pre class="field f2" aria-hidden="true"></pre>
+      <pre class="field f3" aria-hidden="true"></pre>
+      <div id="tree" aria-label="Word tree"></div>
+    </div>
+  </main>
+
+  <p id="caption" role="status" aria-live="polite"></p>
+
+  <footer>
+    <div class="actions">
+      <button type="button" id="random" title="A completely new random word (space)">random<kbd>space</kbd></button>
+      <button type="button" id="grow" title="Branch a related word off this one (enter)">branch<kbd>enter</kbd></button>
+      <button type="button" id="plant" title="Start a separate tree, keeping this word (n)">new tree<kbd>n</kbd></button>
+    </div>
+    <div class="tools">
+      <button type="button" id="define" title="What is this? (d)">define</button>
+      <button type="button" id="swap" title="Trade this word for another relative of its parent (r)" hidden>swap</button>
+      <button type="button" id="undo" title="Undo (z)" hidden>undo</button>
+      <button type="button" id="copy" title="Copy the tree as text (c)" hidden>copy</button>
+      <button type="button" id="clear" title="Start over with one word" hidden>clear</button>
+    </div>
+  </footer>
+
+  <noscript>tangent needs JavaScript to pick words.</noscript>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# local tooling and machine files
+.claude/
+.DS_Store
+node_modules/
+_site/
